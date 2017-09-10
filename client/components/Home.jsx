@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './../styles/App.css'
 
 class Home extends Component {
   componentDidMount() {
@@ -7,9 +8,13 @@ class Home extends Component {
 
   render() {
     return(
-      <div>
-        <h1 style={{marginLeft: '5%'}} >UndocuBonds</h1>
-        <hr width='90%'/>
+      <div id='home' style={{textAlign: 'center'}}>
+        <div className='animated fadeInUp'>
+        <p style={{margin: '0 auto', paddingTop: '8%', fontSize: '3em', color: 'white', display: 'inline-block', letterSpacing: '2px'}}>Undocu</p>
+        <p style={{margin: '0 auto', paddingTop: '8%', fontSize: '3.4em', color: 'white', display: 'inline-block', letterSpacing: '2px'}}>Bonds</p>
+        <hr width='30%'/>
+        <p style={{color: 'white', letterSpacing: '2px'}}>A resource center to help your loved ones</p>
+        </div>
       </div>
     )
   }

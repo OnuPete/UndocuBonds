@@ -7,14 +7,19 @@ import FlatButton from 'material-ui/FlatButton';
 let mql;
 
 let styles = {
+  firstLinkStyle: {
+    textDecoration: 'none',
+    color: '#222',
+    marginRight: '50%',
+    marginLeft: '3%'
+  },
   linkStyle: {
     textDecoration: 'none', 
-    width: '20%',
     color: '#222',
+    marginRight: '.5%'
   },
   appStyle: {
-    backgroundColor: '#55AABF',
-    textAlign: 'center',
+    backgroundColor: 'white',
   }
 }
 
@@ -31,11 +36,12 @@ class Header extends Component {
       <div>
         <AppBar style={styles.appStyle} showMenuIconButton={this.state.isMobile} title={
           <div>
-          <Link style={{width: '19%'}} to='/'><FlatButton hoverColor='white' style={styles.linkStyle} label='UndocuBonds'/></Link>
-          <Link style={{width: '19%'}} to='/about'><FlatButton hoverColor='white' style={styles.linkStyle} label='About'/></Link>
-          <Link style={{width: '19%'}} to='/state'><FlatButton hoverColor='white' style={styles.linkStyle} label='Find a bond'/></Link>
-          <Link style={{width: '19%'}} to='/funds'><FlatButton hoverColor='white' style={styles.linkStyle} label='Community Funds'/></Link>
-          <Link style={{width: '19%'}} to='/resources'><FlatButton hoverColor='white' style={styles.linkStyle} label='Resources'/></Link>
+          <Link to='/'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.firstLinkStyle} label='UndocuBonds'/></Link>
+          <Link to='/'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Home'/></Link>
+          <Link to='/about'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='About'/></Link>
+          <Link to='/state'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Find a bond'/></Link>
+          <Link to='/funds'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Community Funds'/></Link>
+          <Link to='/resources'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Resources'/></Link>
           </div>
         }>
         </AppBar>
