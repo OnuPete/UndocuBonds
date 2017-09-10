@@ -41790,7 +41790,15 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _List = __webpack_require__(395);
+
+var _QAComponent = __webpack_require__(453);
+
+var _QAComponent2 = _interopRequireDefault(_QAComponent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -41801,15 +41809,30 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var About = function (_Component) {
   _inherits(About, _Component);
 
-  function About() {
+  function About(props) {
     _classCallCheck(this, About);
 
-    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this, props));
+
+    _this.handleNestedListToggle = _this.handleNestedListToggle.bind(_this);
+    _this.state = {
+      opens: [false, false, false, false, false, false, false]
+    };
+    return _this;
   }
 
   _createClass(About, [{
+    key: 'handleNestedListToggle',
+    value: function handleNestedListToggle(key) {
+      var opens = [].concat(_toConsumableArray(this.state.opens));
+      opens[key] = !opens[key];
+      this.setState({ opens: opens });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         { className: 'animated fadeIn', style: { marginLeft: '10%', marginTop: '2%', width: '80%' } },
@@ -41828,12 +41851,65 @@ var About = function (_Component) {
           'UndocuBonds provides resources on bail bonds, strategies, knowledge and financial support. We encourage you to use our resources to your advantage!'
         ),
         _react2.default.createElement(
-          'h2',
+          _List.List,
           null,
-          'What is a Bond?'
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 0,
+            open: this.state.opens[0],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(0);
+            },
+            question: 'What is a Bond?',
+            answer: 'An Immigration Bond is an amount of money set by Immigration and Customs Enforcement or by an immigration judge.' }),
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 1,
+            open: this.state.opens[1],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(1);
+            },
+            question: 'From how much can bonds range?',
+            answer: '$1,500- $20,000' }),
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 2,
+            open: this.state.opens[2],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(2);
+            },
+            question: 'Can bonds be lowered?',
+            answer: 'You may petition for a bond to be lowered. The immigration judge determines the amount of a bond.' }),
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 3,
+            open: this.state.opens[3],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(3);
+            },
+            question: 'Who qualifies for a bond?',
+            answer: 'Someone who is not a flight risk and is not a threat to the community' }),
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 4,
+            open: this.state.opens[4],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(4);
+            },
+            question: 'What disqualifies someone from obtaining a bond?',
+            answer: 'Drug crimes\\nPast deportation orders' }),
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 5,
+            open: this.state.opens[5],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(5);
+            },
+            question: 'Is there different types of bonds?',
+            answer: 'Yes,\\nDelivery bond and voluntary departure bond,\\nDelivery bond - makes sure that the detainee shows up to all immigration hearings. They can return to spend time with their family/friends and prepare for court hearings with an immigration lawyer.\\nVoluntary departure bond \u2013  Detainees are given the option to voluntarily leave the country at their own expense by a particular time period. The bond is refundable once the person has left the country, but will not be refunded if the person does not leave.' }),
+          _react2.default.createElement(_QAComponent2.default, {
+            keyProp: 6,
+            open: this.state.opens[6],
+            handleNestedListToggle: function handleNestedListToggle() {
+              return _this2.handleNestedListToggle(6);
+            },
+            question: 'How to have a successful bond hearing?',
+            answer: 'Take  a lawyer\\nTake your  family and friends to the bond hearing' })
         ),
-        _react2.default.createElement('hr', null),
-        'An Immigration Bond is an amount of money set by Immigration and Customs Enforcement or by an immigration judge. The FULL amount must be paid. This ensures the detainees appearance FOR ALL REMOVAL PROCEEDINGS',
         _react2.default.createElement('br', null),
         _react2.default.createElement(
           'h2',
@@ -41841,39 +41917,7 @@ var About = function (_Component) {
           'Disclaimer'
         ),
         _react2.default.createElement('hr', null),
-        'If you or a family member cannot post bond because it is too high, you may consider using a bail bondsmen.  Although this may be the only option to get a family member released from detention, there are many risks to consider if you choose to use a bail bondsman.',
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'li',
-          null,
-          'Bail bondsmen charge a nonrefundable fee to post bail.  Some bondsmen will charge an additional fee for every year the money is not returned.  Bail bondsmen may ask for collateral and may report failure to pay to credit reporting agencies.'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'li',
-          null,
-          'Immigration bail bondsmen must have a special type of license called a \u201Cspecial-casualty\u201D license.  You may contact the New York State Insurance Department Licensing Authority, Licensing Services Bureau at (518) 474-6630 to inquire about a license about a particular bondsman.'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'li',
-          null,
-          'An immigration bond is a contract between the person posting bond and ICE.  If you choose to use a bail bondsman, that contract exists between the bail bondsmen and ICE.'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'li',
-          null,
-          'As part of the contract, ICE may contact the bail bondsmen to have the bonded noncitizen appear for a hearing, interview or removal/ departure.  ICE tells the bail bondsmen to do this by sending a \u201CNotice to Obligor to Deliver Alien.\u201D  You should have an understanding with the bail bondsmen about how s/he will communicate with you if s/he receives such a form!!!!!  This should be a written agreement!'
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'h2',
-          null,
-          'Can bonds be lowered? '
-        ),
-        _react2.default.createElement('hr', null),
-        'An immigration judge is able to lower the amount of a bond if he or she determines that the amount doesn\u2019t meet the offense.'
+        _react2.default.createElement('img', { src: 'undocubonds/undocubonds-disclaimer.png', alt: '', style: { width: '100%' } })
       );
     }
   }]);
@@ -42485,6 +42529,36 @@ var Resources = function (_Component) {
 }(_react.Component);
 
 exports.default = Resources;
+
+/***/ }),
+/* 453 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _List = __webpack_require__(395);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var QAComponent = function QAComponent(props) {
+  return _react2.default.createElement(_List.ListItem, {
+    key: props.keyProp,
+    primaryText: props.question,
+    open: props.open,
+    onNestedListToggle: props.handleNestedListToggle,
+    nestedItems: [_react2.default.createElement(_List.ListItem, { key: 1, primaryText: props.answer })] });
+};
+
+exports.default = QAComponent;
 
 /***/ })
 /******/ ]);

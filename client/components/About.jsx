@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
+import { List } from 'material-ui/List';
+import QAComponent from './QAComponent.jsx';
 
 class About extends Component {
+  constructor(props) {
+    super(props);
+    this.handleNestedListToggle = this.handleNestedListToggle.bind(this);
+    this.state = {
+      opens: [false, false, false, false, false, false, false]
+    }
+  }
+
+  handleNestedListToggle(key) {
+    const opens = [...this.state.opens];
+    opens[key] = !opens[key]
+    this.setState({opens});
+  }
+
   render() {
     return(
       <div className='animated fadeIn' style={{marginLeft: '10%', marginTop: '2%', width: '80%'}}>
@@ -8,24 +24,53 @@ class About extends Component {
         <p>UndocuBonds was created by a group of immigrant youth at Undocuhackathon to provide financial resources to undocumented immigrants. We believe no one should be separated from their families due to lack of money and legal resources.<br/><br/>
         UndocuBonds provides resources on bail bonds, strategies, knowledge and financial support. We encourage you to use our resources to your advantage!</p>
 
-        <h2>What is a Bond?</h2><hr/>
-        An Immigration Bond is an amount of money set by Immigration and Customs Enforcement or by an immigration judge. The FULL amount must be paid. This ensures the detainees appearance FOR ALL REMOVAL PROCEEDINGS<br/>
+        <List>
+          <QAComponent
+            keyProp={0}
+            open={this.state.opens[0]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(0)}
+            question="What is a Bond?"
+            answer="An Immigration Bond is an amount of money set by Immigration and Customs Enforcement or by an immigration judge." />
+          <QAComponent
+            keyProp={1}
+            open={this.state.opens[1]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(1)}
+            question="From how much can bonds range?"
+            answer="$1,500- $20,000" />
+          <QAComponent
+            keyProp={2}
+            open={this.state.opens[2]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(2)}
+            question="Can bonds be lowered?"
+            answer="You may petition for a bond to be lowered. The immigration judge determines the amount of a bond." />
+          <QAComponent
+            keyProp={3}
+            open={this.state.opens[3]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(3)}
+            question="Who qualifies for a bond?"
+            answer="Someone who is not a flight risk and is not a threat to the community" />
+          <QAComponent
+            keyProp={4}
+            open={this.state.opens[4]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(4)}
+            question="What disqualifies someone from obtaining a bond?"
+            answer="Drug crimes\nPast deportation orders" />
+          <QAComponent
+            keyProp={5}
+            open={this.state.opens[5]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(5)}
+            question="Is there different types of bonds?"
+            answer="Yes,\nDelivery bond and voluntary departure bond,\nDelivery bond - makes sure that the detainee shows up to all immigration hearings. They can return to spend time with their family/friends and prepare for court hearings with an immigration lawyer.\nVoluntary departure bond –  Detainees are given the option to voluntarily leave the country at their own expense by a particular time period. The bond is refundable once the person has left the country, but will not be refunded if the person does not leave." />
+          <QAComponent
+            keyProp={6}
+            open={this.state.opens[6]}
+            handleNestedListToggle={()=>this.handleNestedListToggle(6)}
+            question="How to have a successful bond hearing?"
+            answer="Take  a lawyer\nTake your  family and friends to the bond hearing" />
+        </List>
+        <br/>
         <h2>Disclaimer</h2><hr/>
-        If you or a family member cannot post bond because it is too high, you may consider using a bail bondsmen.  Although this may be the only option to get a family member released from detention, there are many risks to consider if you choose to use a bail bondsman.
-        <br/><li>
-        Bail bondsmen charge a nonrefundable fee to post bail.  Some bondsmen will charge an additional fee for every year the money is not returned.  Bail bondsmen may ask for collateral and may report failure to pay to credit reporting agencies.
-        </li><br/>
-        <li>
-        Immigration bail bondsmen must have a special type of license called a “special-casualty” license.  You may contact the New York State Insurance Department Licensing Authority, Licensing Services Bureau at (518) 474-6630 to inquire about a license about a particular bondsman.
-        </li><br/>
-        <li>
-        An immigration bond is a contract between the person posting bond and ICE.  If you choose to use a bail bondsman, that contract exists between the bail bondsmen and ICE.
-        </li><br/>
-        <li>
-        As part of the contract, ICE may contact the bail bondsmen to have the bonded noncitizen appear for a hearing, interview or removal/ departure.  ICE tells the bail bondsmen to do this by sending a “Notice to Obligor to Deliver Alien.”  You should have an understanding with the bail bondsmen about how s/he will communicate with you if s/he receives such a form!!!!!  This should be a written agreement!
-        </li><br/>
-        <h2>Can bonds be lowered? </h2><hr/>
-        An immigration judge is able to lower the amount of a bond if he or she determines that the amount doesn’t meet the offense.
+        <img src="undocubonds/undocubonds-disclaimer.png" alt="" style={{width: '100%'}}/>
       </div>
     )
   }
