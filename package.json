@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
     "build": "webpack -w"
   },
   "repository": {
@@ -13,6 +13,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "8.1.2"
+  },
   "bugs": {
     "url": "https://github.com/UndocuBonds/UndocuBonds/issues"
   },

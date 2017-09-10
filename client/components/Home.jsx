@@ -10,8 +10,7 @@ class Home extends Component {
     return(
       <div id='home' style={{textAlign: 'center'}}>
         <div className='animated fadeInUp'>
-        <p style={{margin: '0 auto', paddingTop: '8%', fontSize: '3em', color: 'white', display: 'inline-block', letterSpacing: '2px'}}>Undocu</p>
-        <p style={{margin: '0 auto', paddingTop: '8%', fontSize: '3.4em', color: 'white', display: 'inline-block', letterSpacing: '2px'}}>Bonds</p>
+        <img src="./../assets/undocubonds colors.png" alt=""/>
         <hr width='25%'/>
         <p style={{color: 'white', letterSpacing: '2px'}}>A resource center to help your loved ones</p>
         </div>
