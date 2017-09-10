@@ -3,6 +3,7 @@ import { List, ListItem } from 'material-ui/List';
 import Paper from 'material-ui/Paper'
 
 const states = [
+'National',
 'Alabama',
 'Alaska',
 'Arizona',
@@ -56,6 +57,14 @@ const states = [
 ];
 
 const description = {
+  'National': ['Freedom Federal Bonding Agency',
+              'http://www.freedomfederalbondingagency.com/ ',
+              '6309 Skyline DriveHouston, TX 77057',
+              'Teléfono: (832) 831-5252'],
+  'Alabama': ['Freedom Bail Bonding Co., Inc',
+              'http://www.freedombailbonding.com/',
+              '10610 Main Street Fairfax, VA 22030',
+              'Número gratuito: 1-888-4017200 VA: (703) 691-4900 MD: (301) 588-9600'],  
   'California': 'We da Best',
   'New York': 'cry cry all the time'
 }
@@ -66,7 +75,7 @@ class Find extends Component {
     this.handleClick = this.handleClick.bind(this);
 
     this.state = {
-      currentState: '',
+      currentState: 'National',
     }
   }
 
@@ -82,15 +91,24 @@ class Find extends Component {
     })
   }
 
+  mapDescription() {
+    return description[this.state.currentState].map(description => {
+      return (
+        <ul>
+          {description}
+        </ul>
+      )
+    })
+  }
+
   render() {
     return(
       <div style={{display: 'flex'}}>
-        <List style={{width: '15%', height: '840px', padding: 0, overflow: 'scroll'}}>
+        <List className='animated fadeInLeft' style={{width: '15%', height: '840px', padding: 0, overflow: 'scroll'}}>
           {this.mapStates()}
         </List>
-        <Paper zDepth={0} style={styles.paperStyle}>
-          <p>Lorem Ipsom cudle da too</p>
-          <p>{description[this.state.currentState]}</p>
+        <Paper className='animated fadeInUp' zDepth={0} style={styles.paperStyle}>
+          <p>{this.mapDescription()}</p>
         </Paper>
       </div>
     )
