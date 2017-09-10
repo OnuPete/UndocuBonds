@@ -4,6 +4,7 @@ import Home from './Home.jsx';
 import Find from './Find.jsx';
 import Funds from './Funds.jsx';
 import About from './About.jsx';
+import Resources from './Resources.jsx';
 
 class Main extends Component {
   render() {
@@ -13,7 +14,7 @@ class Main extends Component {
         <Route path='/about' component={About}/>
         <Route path='/state' component={Find}/>
         <Route path='/funds' component={Funds}/>
-        <Route path='/resources' component={Home}/>
+        <Route path='/resources' component={Resources}/>
       </div>
     )
   }

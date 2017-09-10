@@ -10,16 +10,21 @@ let styles = {
   firstLinkStyle: {
     textDecoration: 'none',
     color: '#222',
-    marginRight: '50%',
+    marginRight: '45%',
     marginLeft: '3%'
   },
   linkStyle: {
-    textDecoration: 'none', 
+    textDecoration: 'none',
     color: '#222',
-    marginRight: '.5%'
+    marginRight: '.5%',
+    width: '3%'
   },
   appStyle: {
     backgroundColor: 'white',
+    width: '100%'
+  },
+  navStyle: {
+    width: '100%'
   }
 }
 
@@ -35,13 +40,13 @@ class Header extends Component {
     return(
       <div>
         <AppBar style={styles.appStyle} showMenuIconButton={this.state.isMobile} title={
-          <div>
-          <Link to='/'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.firstLinkStyle} label='UndocuBonds'/></Link>
-          <Link to='/'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Home'/></Link>
-          <Link to='/about'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='About'/></Link>
-          <Link to='/state'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Find a bond'/></Link>
-          <Link to='/funds'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Community Funds'/></Link>
-          <Link to='/resources'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Resources'/></Link>
+          <div style={styles.navStyle}>
+            <Link to='/'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.firstLinkStyle} label='UndocuBonds'/></Link>
+            <Link to='/'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Home'/></Link>
+            <Link to='/about'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='About'/></Link>
+            <Link to='/state'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Find a bond'/></Link>
+            <Link to='/funds'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Community Funds'/></Link>
+            <Link to='/resources'><FlatButton hoverColor='none' labelStyle={{textTransform: 'none'}} style={styles.linkStyle} label='Resources'/></Link>
           </div>
         }>
         </AppBar>

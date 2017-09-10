@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as text from './../assets/fundsInfo.json';
 import FlatButton from 'material-ui/FlatButton';
+import Donate from './Donate.jsx';
 
 class Funds extends Component {
   constructor() {
@@ -12,7 +13,7 @@ class Funds extends Component {
       <div className='animated fadeIn' style={{margin: '0 auto'}}>
       <div style={{marginLeft: '5%', paddingRight: '5%', paddingTop: '2%', width: '90%', height: '750px', overflow: 'scroll', color: 'black'}} >
         {text.headInfo} <br/><br/>
-        <h2>Online</h2><hr/> 
+        <h2>Online</h2><hr/>
                 <li>{text.online.Bullet1}</li>
                 <li>{text.online.Bullet2}</li>
                 <ul>{text.online.Bullet3}</ul>
@@ -29,7 +30,7 @@ class Funds extends Component {
         <h2>Community Funding</h2><hr/>
                     <li>{text.communityFunding.Bullet1}</li><br/><br/>
       </div>
-      <FlatButton backgroundColor='lightgreen' labelStyle={{color: '#222', letterSpacing: '4px', fontSize: '1em'}} style={{position: 'fixed', bottom: '0', width: '100%', height: '50px'}} label='Donate'/>
+      <Donate />
       </div>
     );
   }

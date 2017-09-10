@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname +'./../')); //serves the index.html
 app.use(express.static(__dirname +'./../bundle')); //serves the build
+app.use(express.static(__dirname +'./../client/assets')); //serves assets
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
